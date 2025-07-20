@@ -6,8 +6,8 @@ const InstagramGallery: React.FC = () => {
   const instagramPosts = [
     "https://www.instagram.com/reel/C2eYjSCtpLY/?utm_source=ig_embed&utm_campaign=loading",
     "https://www.instagram.com/tv/CfB785fjJz2/?utm_source=ig_embed&utm_campaign=loading",
-    "https://www.instagram.com/reel/C1KjEsAtGHw/?utm_source=ig_embed&utm_campaign=loading",
-    "https://www.instagram.com/reel/C0vBqShNjKl/?utm_source=ig_embed&utm_campaign=loading"
+    "https://www.instagram.com/p/C_-T-H6tX2F/?utm_source=ig_embed&utm_campaign=loading",
+    "https://www.instagram.com/reel/Cz6bmt1t8hU/?utm_source=ig_embed&utm_campaign=loading"
   ];
 
   return (
