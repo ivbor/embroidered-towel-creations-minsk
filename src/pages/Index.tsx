@@ -23,7 +23,8 @@ import {
   Shield,
   ChevronRight,
   CheckCircle,
-  MessageCircle
+  MessageCircle,
+  Send
 } from 'lucide-react';
 
 const Index = () => {
@@ -40,6 +41,14 @@ const Index = () => {
 
   const handlePhoneCall = () => {
     window.location.href = 'tel:+375291870066';
+  };
+
+  const handleViberClick = () => {
+    window.open('viber://chat?number=+375291870066', '_blank');
+  };
+
+  const handleInstagramClick = () => {
+    window.open('https://instagram.com/your_instagram', '_blank');
   };
 
   return (
@@ -59,8 +68,12 @@ const Index = () => {
       <header className="bg-white shadow-sm border-b">
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
-            <div className="flex items-center space-x-2">
-              <Package className="h-8 w-8 text-amber-600" />
+            <div className="flex items-center space-x-3">
+              <img 
+                src="/lovable-uploads/d6fed386-6fc9-4b86-90f8-b64eee47a1a4.png" 
+                alt="Rusan Logo" 
+                className="h-12 w-auto"
+              />
               <div>
                 <h1 className="text-2xl font-bold text-gray-900">Rusan</h1>
                 <p className="text-sm text-gray-600">Швейное ателье. Вышивка. Ремонт.</p>
@@ -75,13 +88,28 @@ const Index = () => {
             </nav>
             <div className="flex items-center space-x-4">
               <div className="hidden md:flex items-center space-x-2">
-                <Button variant="outline" size="sm" className="p-2">
-                  <MessageCircle className="h-4 w-4 text-blue-500" />
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  className="p-2"
+                  onClick={handleTelegramClick}
+                >
+                  <Send className="h-4 w-4 text-blue-500" />
                 </Button>
-                <Button variant="outline" size="sm" className="p-2">
-                  <Phone className="h-4 w-4 text-purple-500" />
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  className="p-2"
+                  onClick={handleViberClick}
+                >
+                  <MessageCircle className="h-4 w-4 text-purple-500" />
                 </Button>
-                <Button variant="outline" size="sm" className="p-2">
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  className="p-2"
+                  onClick={handleInstagramClick}
+                >
                   <div className="w-4 h-4 bg-gradient-to-br from-pink-500 to-orange-500 rounded"></div>
                 </Button>
               </div>
@@ -106,7 +134,7 @@ const Index = () => {
                 Производство в Минске
               </Badge>
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                <span className="text-amber-600">Махровые полотенца</span><br />
+                <span className="text-black">МАХРОВЫЕ</span> <span className="text-amber-600">полотенца</span><br />
                 Нанесение вышивки
               </h1>
               <p className="text-xl text-gray-700 mb-8">
@@ -153,6 +181,14 @@ const Index = () => {
             </div>
           </div>
         </div>
+        {/* CTA Button after Hero */}
+        <div className="container mx-auto px-4 pt-8">
+          <div className="text-center">
+            <Button size="lg" className="bg-amber-600 hover:bg-amber-700">
+              Рассчитать стоимость
+            </Button>
+          </div>
+        </div>
       </section>
 
       {/* Key Benefits */}
@@ -193,6 +229,14 @@ const Index = () => {
                 <p className="text-gray-600 text-sm">Изготовление от 1 дня</p>
               </CardContent>
             </Card>
+          </div>
+        </div>
+        {/* CTA Button after Benefits */}
+        <div className="container mx-auto px-4 pt-8">
+          <div className="text-center">
+            <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+              Выбрать полотенца
+            </Button>
           </div>
         </div>
       </section>
@@ -246,6 +290,17 @@ const Index = () => {
             </Card>
           </div>
 
+          {/* Telegram Button */}
+          <div className="text-center mb-12">
+            <Button 
+              size="lg" 
+              className="bg-blue-600 hover:bg-blue-700"
+              onClick={handleTelegramClick}
+            >
+              Узнать цвета в наличии
+            </Button>
+          </div>
+
           {/* Product Categories with Background Images */}
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="hover:shadow-xl transition-shadow relative overflow-hidden">
@@ -257,10 +312,10 @@ const Index = () => {
                 <Users className="h-12 w-12 text-blue-400 mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Для бизнеса</h3>
                 <p className="text-gray-200 mb-4">Любое количество</p>
-                <ul className="text-sm text-gray-200 space-y-1">
-                  <li>• Персональная вышивка</li>
-                  <li>• Подарочная упаковка</li>
-                </ul>
+                <div className="text-sm text-gray-200 space-y-1">
+                  <p>Персональная вышивка</p>
+                  <p>Подарочная упаковка</p>
+                </div>
               </CardContent>
             </Card>
 
@@ -273,10 +328,10 @@ const Index = () => {
                 <Heart className="h-12 w-12 text-red-400 mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Подарочные наборы</h3>
                 <p className="text-gray-200 mb-4">Праздники, дни рождения</p>
-                <ul className="text-sm text-gray-200 space-y-1">
-                  <li>• Быстрое оформление</li>
-                  <li>• Приоритетное производство</li>
-                </ul>
+                <div className="text-sm text-gray-200 space-y-1">
+                  <p>Быстрое оформление</p>
+                  <p>Приоритетное производство</p>
+                </div>
               </CardContent>
             </Card>
 
@@ -289,12 +344,20 @@ const Index = () => {
                 <Building2 className="h-12 w-12 text-green-400 mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Корпоративные заказы</h3>
                 <p className="text-gray-200 mb-4">Для компаний и организаций</p>
-                <ul className="text-sm text-gray-200 space-y-1">
-                  <li>• Личный менеджер</li>
-                  <li>• Максимальные скидки</li>
-                </ul>
+                <div className="text-sm text-gray-200 space-y-1">
+                  <p>Личный менеджер</p>
+                  <p>Максимальные скидки</p>
+                </div>
               </CardContent>
             </Card>
+          </div>
+        </div>
+        {/* CTA Button after Catalog */}
+        <div className="container mx-auto px-4 pt-8">
+          <div className="text-center">
+            <Button size="lg" className="bg-green-600 hover:bg-green-700">
+              Рассчитать заказ
+            </Button>
           </div>
         </div>
       </section>
@@ -314,16 +377,16 @@ const Index = () => {
                 <CardDescription>Скидка на небольшие заказы</CardDescription>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-2 text-sm">
-                  <li className="flex items-center gap-2">
+                <div className="space-y-2 text-sm">
+                  <div className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-600" />
-                    Персональная вышивка
-                  </li>
-                  <li className="flex items-center gap-2">
+                    <span>Персональная вышивка</span>
+                  </div>
+                  <div className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-600" />
-                    Подарочная упаковка
-                  </li>
-                </ul>
+                    <span>Подарочная упаковка</span>
+                  </div>
+                </div>
               </CardContent>
             </Card>
 
@@ -337,16 +400,16 @@ const Index = () => {
                 <CardDescription>Оптимальный заказ</CardDescription>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-2 text-sm">
-                  <li className="flex items-center gap-2">
+                <div className="space-y-2 text-sm">
+                  <div className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-600" />
-                    Быстрое оформление
-                  </li>
-                  <li className="flex items-center gap-2">
+                    <span>Быстрое оформление</span>
+                  </div>
+                  <div className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-600" />
-                    Приоритетное производство
-                  </li>
-                </ul>
+                    <span>Приоритетное производство</span>
+                  </div>
+                </div>
               </CardContent>
             </Card>
 
@@ -357,18 +420,26 @@ const Index = () => {
                 <CardDescription>Индивидуальные условия</CardDescription>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-2 text-sm">
-                  <li className="flex items-center gap-2">
+                <div className="space-y-2 text-sm">
+                  <div className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-600" />
-                    Максимальные скидки
-                  </li>
-                  <li className="flex items-center gap-2">
+                    <span>Максимальные скидки</span>
+                  </div>
+                  <div className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-600" />
-                    Личный менеджер
-                  </li>
-                </ul>
+                    <span>Личный менеджер</span>
+                  </div>
+                </div>
               </CardContent>
             </Card>
+          </div>
+        </div>
+        {/* CTA Button after Pricing */}
+        <div className="container mx-auto px-4 pt-8">
+          <div className="text-center">
+            <Button size="lg" className="bg-purple-600 hover:bg-purple-700">
+              Узнать условия
+            </Button>
           </div>
         </div>
       </section>
@@ -409,7 +480,7 @@ const Index = () => {
                   <div className="flex-shrink-0 w-10 h-10 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold">4</div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Упаковка на выбор и быстрая доставка</h4>
-                    <p className="text-gray-600">Подарочная упаковка (если оптом) и быстрая доставка</p>
+                    <p className="text-gray-500">Подарочная, обычная или без упаковки, собственная логистика</p>
                   </div>
                 </div>
               </div>
@@ -432,6 +503,14 @@ const Index = () => {
                 <h4 className="font-semibold text-sm">Гарантия качества</h4>
               </Card>
             </div>
+          </div>
+        </div>
+        {/* CTA Button after Services */}
+        <div className="container mx-auto px-4 pt-8">
+          <div className="text-center">
+            <Button size="lg" className="bg-orange-600 hover:bg-orange-700">
+              Заказать консультацию
+            </Button>
           </div>
         </div>
       </section>
@@ -532,7 +611,11 @@ const Index = () => {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <Package className="h-8 w-8 text-amber-400" />
+                <img 
+                  src="/lovable-uploads/d6fed386-6fc9-4b86-90f8-b64eee47a1a4.png" 
+                  alt="Rusan Logo" 
+                  className="h-8 w-auto brightness-0 invert"
+                />
                 <div>
                   <h3 className="text-xl font-bold">Rusan</h3>
                   <p className="text-gray-400 text-sm">Швейное ателье</p>
