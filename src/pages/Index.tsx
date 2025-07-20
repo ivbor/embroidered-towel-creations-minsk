@@ -36,7 +36,7 @@ const Index = () => {
   });
 
   const handleTelegramClick = () => {
-    window.open('https://t.me/your_telegram_username', '_blank');
+    window.open('https://t.me/DarRusan', '_blank');
   };
 
   const handlePhoneCall = () => {
@@ -48,7 +48,7 @@ const Index = () => {
   };
 
   const handleInstagramClick = () => {
-    window.open('https://instagram.com/your_instagram', '_blank');
+    window.open('https://www.instagram.com/rusan.by/', '_blank');
   };
 
   return (
@@ -315,7 +315,11 @@ const Index = () => {
             <Card className="hover:shadow-xl transition-shadow relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
               <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
-                <p className="text-gray-500 text-sm">Фото: белые полотенца с вышивкой SPA</p>
+                <img 
+                  src="/lovable-uploads/b7f2f16f.jpg" 
+                  alt="Фото: белые полотенца с вышивкой SPA" 
+                  className="w-auto"
+                />
               </div>
               <CardContent className="p-6 relative z-20 text-white">
                 <Users className="h-12 w-12 text-blue-400 mb-4" />
@@ -333,7 +337,11 @@ const Index = () => {
             <Card className="hover:shadow-xl transition-shadow relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
               <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
-                <p className="text-gray-500 text-sm">Фото: свадебные полотенца</p>
+                <img 
+                  src="/lovable-uploads/IMG_0089.jpg" 
+                  alt="Фото: свадебные полотенца" 
+                  className="w-auto"
+                />
               </div>
               <CardContent className="p-6 relative z-20 text-white">
                 <Heart className="h-12 w-12 text-red-400 mb-4" />
@@ -351,7 +359,11 @@ const Index = () => {
             <Card className="hover:shadow-xl transition-shadow relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
               <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
-                <p className="text-gray-500 text-sm">Фото: полотенца с логотипом банка</p>
+                <img 
+                  src="/lovable-uploads/7b901cf8.jpg" 
+                  alt="Фото: полотенца с логотипом банка" 
+                  className="w-auto"
+                />
               </div>
               <CardContent className="p-6 relative z-20 text-white">
                 <Building2 className="h-12 w-12 text-green-400 mb-4" />
