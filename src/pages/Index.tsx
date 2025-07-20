@@ -69,13 +69,22 @@ const Index = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-3">
+              { /*
               <img 
                 src="/lovable-uploads/d6fed386-6fc9-4b86-90f8-b64eee47a1a4.png" 
                 alt="Rusan Logo" 
                 className="h-12 w-auto"
               />
+              */ }
               <div>
+                <img 
+                  src="/lovable-uploads/d6fed386-6fc9-4b86-90f8-b64eee47a1a4.png" 
+                  alt="Rusan Logo" 
+                  className="h-12 w-auto"
+                />
+                { /*
                 <h1 className="text-2xl font-bold text-gray-900">Rusan</h1>
+                */ }
                 <p className="text-sm text-gray-600">Швейное ателье. Вышивка. Ремонт.</p>
               </div>
             </div>
@@ -134,7 +143,7 @@ const Index = () => {
                 Производство в Минске
               </Badge>
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                <span className="text-black">МАХРОВЫЕ</span> <span className="text-amber-600">полотенца</span><br />
+                Махровые <span className="text-amber-600">полотенца</span><br />
                 Нанесение вышивки
               </h1>
               <p className="text-xl text-gray-700 mb-8">
@@ -312,10 +321,12 @@ const Index = () => {
                 <Users className="h-12 w-12 text-blue-400 mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Для бизнеса</h3>
                 <p className="text-gray-200 mb-4">Любое количество</p>
+                { /*
                 <div className="text-sm text-gray-200 space-y-1">
                   <p>Персональная вышивка</p>
                   <p>Подарочная упаковка</p>
                 </div>
+                */ }
               </CardContent>
             </Card>
 
@@ -328,10 +339,12 @@ const Index = () => {
                 <Heart className="h-12 w-12 text-red-400 mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Подарочные наборы</h3>
                 <p className="text-gray-200 mb-4">Праздники, дни рождения</p>
+                { /*
                 <div className="text-sm text-gray-200 space-y-1">
                   <p>Быстрое оформление</p>
                   <p>Приоритетное производство</p>
                 </div>
+                */ }
               </CardContent>
             </Card>
 
@@ -344,10 +357,12 @@ const Index = () => {
                 <Building2 className="h-12 w-12 text-green-400 mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Корпоративные заказы</h3>
                 <p className="text-gray-200 mb-4">Для компаний и организаций</p>
+                { /*
                 <div className="text-sm text-gray-200 space-y-1">
                   <p>Личный менеджер</p>
                   <p>Максимальные скидки</p>
                 </div>
+                */ }
               </CardContent>
             </Card>
           </div>
@@ -611,13 +626,22 @@ const Index = () => {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
+                { /*
                 <img 
                   src="/lovable-uploads/d6fed386-6fc9-4b86-90f8-b64eee47a1a4.png" 
                   alt="Rusan Logo" 
                   className="h-8 w-auto brightness-0 invert"
                 />
+                */ }
                 <div>
+                  <img 
+                    src="/lovable-uploads/d6fed386-6fc9-4b86-90f8-b64eee47a1a4.png" 
+                    alt="Rusan Logo" 
+                    className="h-8 w-auto brightness-0 invert"
+                  />
+                  { /*
                   <h3 className="text-xl font-bold">Rusan</h3>
+                  */ }
                   <p className="text-gray-400 text-sm">Швейное ателье</p>
                 </div>
               </div>
