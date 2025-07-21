@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Separator } from "@/components/ui/separator";
 import InstagramGallery from '@/components/InstagramGallery';
+import TowelCarousel from '@/components/TowelCarousel';
 import { 
   Phone, 
   Mail, 
@@ -251,6 +252,13 @@ const Index = () => {
         </div>
       </section>
 
+      {/* First Carousel - between "Почему выбирают нас" and "Каталог полотенец" */}
+      <TowelCarousel images={[
+        "/lovable-uploads/ee09870d-04e5-4ed0-ad5a-3c2235e3fd75.png",
+        "/lovable-uploads/fdcd1846-7c62-4aeb-9a3d-8838fed3a055.png",
+        "/lovable-uploads/2a544414-329d-4abc-b345-1191b817b92c.png"
+      ]} />
+
       {/* Catalog Section */}
       <section id="catalog" className="py-16 bg-stone-50">
         <div className="container mx-auto px-4">
@@ -471,6 +479,13 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Second Carousel - between "Выгодные условия" and "Наши услуги" */}
+      <TowelCarousel images={[
+        "/lovable-uploads/af3ccc65-18af-4591-b511-5345978cb39a.png",
+        "/lovable-uploads/12ba7a46-7134-4624-b3d4-9fbc0b816f59.png",
+        "/lovable-uploads/acd0d9a5-e1e3-443c-8727-2d1fb23f1053.png"
+      ]} />
 
       {/* Services Section */}
       <section id="services" className="py-16 bg-stone-50">
