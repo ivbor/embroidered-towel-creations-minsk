@@ -113,7 +113,9 @@ const Index = () => {
                   className="p-2"
                   onClick={handleViberClick}
                 >
-                  <MessageCircle className="h-4 w-4 text-purple-500" />
+                  <svg className="h-4 w-4 text-purple-500" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M11.398.002C5.473.002.565 4.91.565 10.835c0 2.24.723 4.31 1.95 5.996L.895 23.467l7.275-1.835c1.639.95 3.572 1.496 5.625 1.496 5.926 0 10.834-4.908 10.834-10.834C24.629 5.368 19.721.435 13.796.435L11.398.002zm5.642 6.616v.001c0 .484-.484.726-.726.726h-1.694c-.242 0-.726-.484-.726-.726v-2.42c0-.242.484-.726.726-.726h1.694c.484 0 .726.484.726.726v2.419zm-8.065 0v.001c0 .484-.484.726-.726.726H6.555c-.242 0-.726-.484-.726-.726v-2.42c0-.242.484-.726.726-.726h1.694c.484 0 .726.484.726.726v2.419z"/>
+                  </svg>
                 </Button>
                 <Button 
                   variant="outline" 
@@ -121,7 +123,20 @@ const Index = () => {
                   className="p-2"
                   onClick={handleInstagramClick}
                 >
-                  <div className="w-4 h-4 bg-gradient-to-br from-pink-500 to-orange-500 rounded"></div>
+                  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none">
+                    <defs>
+                      <linearGradient id="instagram-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#833ab4"/>
+                        <stop offset="25%" stopColor="#c13584"/>
+                        <stop offset="50%" stopColor="#e1306c"/>
+                        <stop offset="75%" stopColor="#fd1d1d"/>
+                        <stop offset="100%" stopColor="#f77737"/>
+                      </linearGradient>
+                    </defs>
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="url(#instagram-gradient)"/>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="white"/>
+                    <line x1="17.5" y1="6.5" x2="17.5" y2="6.5" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
                 </Button>
               </div>
               <div className="text-right hidden md:block">
@@ -254,9 +269,11 @@ const Index = () => {
 
       {/* First Carousel - between "Почему выбирают нас" and "Каталог полотенец" */}
       <TowelCarousel images={[
-        "/lovable-uploads/ee09870d-04e5-4ed0-ad5a-3c2235e3fd75.png",
-        "/lovable-uploads/fdcd1846-7c62-4aeb-9a3d-8838fed3a055.png",
-        "/lovable-uploads/2a544414-329d-4abc-b345-1191b817b92c.png"
+        "/lovable-uploads/f6df139d-aa2a-4952-aa61-d164efa82f24.png",
+        "/lovable-uploads/d8d36018-48d7-4c21-8271-6bc4c648b3e1.png",
+        "/lovable-uploads/b7db4e1a-ce9d-4dbe-916f-a424ec2185d1.png",
+        "/lovable-uploads/69a5a933-331d-4add-882a-132a7bfd847a.png",
+        "/lovable-uploads/ad5bf7b1-2a77-4b15-8e1d-7ef5ae1b36f9.png"
       ]} />
 
       {/* Catalog Section */}
@@ -482,9 +499,11 @@ const Index = () => {
 
       {/* Second Carousel - between "Выгодные условия" and "Наши услуги" */}
       <TowelCarousel images={[
-        "/lovable-uploads/af3ccc65-18af-4591-b511-5345978cb39a.png",
-        "/lovable-uploads/12ba7a46-7134-4624-b3d4-9fbc0b816f59.png",
-        "/lovable-uploads/acd0d9a5-e1e3-443c-8727-2d1fb23f1053.png"
+        "/lovable-uploads/596afad8-3979-4d8a-88e8-f5e8d35ad177.png",
+        "/lovable-uploads/d6e1ae17-16ae-4e5c-98ec-d209b0b25944.png",
+        "/lovable-uploads/cb7e78b4-b53a-4a5e-a38a-eac127ec6632.png",
+        "/lovable-uploads/aa44f238-6ef8-4d69-b2c4-97f0543fa51a.png",
+        "/lovable-uploads/f5d80a56-50cf-4e1b-b93c-304789d86c3d.png"
       ]} />
 
       {/* Services Section */}
