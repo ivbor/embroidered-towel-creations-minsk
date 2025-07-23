@@ -13,9 +13,8 @@ interface TowelCarouselProps {
 const TowelCarousel = ({ images }: TowelCarouselProps) => {
   return (
     <section className="py-16 bg-gradient-to-b from-stone-50 to-white">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <Carousel className="w-full">
+      <div className="w-full">
+        <Carousel className="w-full">
             <CarouselContent>
               {images.map((image, index) => (
                 <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/3">
@@ -34,7 +33,6 @@ const TowelCarousel = ({ images }: TowelCarouselProps) => {
             <CarouselPrevious className="left-4" />
             <CarouselNext className="right-4" />
           </Carousel>
-        </div>
       </div>
     </section>
   );

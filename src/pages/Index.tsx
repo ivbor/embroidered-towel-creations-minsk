@@ -269,6 +269,9 @@ const Index = () => {
 
       {/* First Carousel - between "Почему выбирают нас" and "Каталог полотенец" */}
       <TowelCarousel images={[
+        "/lovable-uploads/ee09870d-04e5-4ed0-ad5a-3c2235e3fd75.png",
+        "/lovable-uploads/fdcd1846-7c62-4aeb-9a3d-8838fed3a055.png",
+        "/lovable-uploads/2a544414-329d-4abc-b345-1191b817b92c.png",
         "/lovable-uploads/f6df139d-aa2a-4952-aa61-d164efa82f24.png",
         "/lovable-uploads/d8d36018-48d7-4c21-8271-6bc4c648b3e1.png",
         "/lovable-uploads/b7db4e1a-ce9d-4dbe-916f-a424ec2185d1.png",
@@ -499,6 +502,9 @@ const Index = () => {
 
       {/* Second Carousel - between "Выгодные условия" and "Наши услуги" */}
       <TowelCarousel images={[
+        "/lovable-uploads/af3ccc65-18af-4591-b511-5345978cb39a.png",
+        "/lovable-uploads/12ba7a46-7134-4624-b3d4-9fbc0b816f59.png",
+        "/lovable-uploads/acd0d9a5-e1e3-443c-8727-2d1fb23f1053.png",
         "/lovable-uploads/596afad8-3979-4d8a-88e8-f5e8d35ad177.png",
         "/lovable-uploads/d6e1ae17-16ae-4e5c-98ec-d209b0b25944.png",
         "/lovable-uploads/cb7e78b4-b53a-4a5e-a38a-eac127ec6632.png",
