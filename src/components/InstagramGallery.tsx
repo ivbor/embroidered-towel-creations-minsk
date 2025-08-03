@@ -4,7 +4,7 @@ import { Button } from './ui/button';
 
 const InstagramGallery: React.FC = () => {
   const instagramPosts = [
-    "https://www.instagram.com/reel/C2eYjSCtpLY/?utm_source=ig_embed&utm_campaign=loading",
+    "https://www.instagram.com/p/ChU4R5xo6gk/?utm_source=ig_embed&utm_campaign=loading",
     "https://www.instagram.com/tv/CfB785fjJz2/?utm_source=ig_embed&utm_campaign=loading",
     "https://www.instagram.com/p/Ch14kskIhrN/?utm_source=ig_embed&utm_campaign=loading",
     "https://www.instagram.com/p/CfTgyaGtFX3/?utm_source=ig_embed&utm_campaign=loading"

@@ -25,8 +25,7 @@ import {
   Shield,
   ChevronRight,
   CheckCircle,
-  MessageCircle,
-  Send
+  MessageCircle
 } from 'lucide-react';
 
 const Index = () => {
@@ -36,6 +35,20 @@ const Index = () => {
     email: '',
     message: ''
   });
+
+  async function sendMessageToBot(message) {
+    const response = await fetch("34.172.218.129:8100/send-message", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ "message": message })
+    });
+
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.details || "Failed to send");
+    return data;
+  }
 
   const handleTelegramClick = () => {
     window.open('https://t.me/DarRusan', '_blank');
@@ -71,22 +84,12 @@ const Index = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-3">
-              { /*
-              <img 
-                src="/lovable-uploads/d6fed386-6fc9-4b86-90f8-b64eee47a1a4.png" 
-                alt="Rusan Logo" 
-                className="h-12 w-auto"
-              />
-              */ }
               <div>
                 <img 
                   src="/lovable-uploads/d6fed386-6fc9-4b86-90f8-b64eee47a1a4.png" 
                   alt="Rusan Logo" 
                   className="h-12 w-auto"
                 />
-                { /*
-                <h1 className="text-2xl font-bold text-gray-900">Rusan</h1>
-                */ }
                 <p className="text-sm text-gray-600">Швейное ателье. Вышивка. Ремонт.</p>
               </div>
             </div>
@@ -105,7 +108,13 @@ const Index = () => {
                   className="p-2"
                   onClick={handleTelegramClick}
                 >
-                  <Send className="h-4 w-4 text-blue-500" />
+                <a href="#contacts">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25px" height="25px" viewBox="0 0 25 25" version="1.1">
+                <g id="surface1">
+                <path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 21.574219 3.808594 C 21.574219 3.808594 23.597656 3.019531 23.425781 4.933594 C 23.371094 5.722656 22.867188 8.484375 22.472656 11.472656 L 21.121094 20.320312 C 21.121094 20.320312 21.011719 21.617188 20 21.84375 C 18.988281 22.066406 17.46875 21.054688 17.1875 20.828125 C 16.964844 20.660156 12.972656 18.121094 11.566406 16.882812 C 11.171875 16.542969 10.722656 15.867188 11.625 15.078125 L 17.523438 9.441406 C 18.199219 8.765625 18.875 7.1875 16.0625 9.105469 L 8.195312 14.460938 C 8.195312 14.460938 7.296875 15.023438 5.609375 14.515625 L 1.953125 13.386719 C 1.953125 13.386719 0.605469 12.542969 2.910156 11.699219 C 8.53125 9.046875 15.445312 6.34375 21.574219 3.808594 Z M 21.574219 3.808594 "/>
+                </g>
+                </svg>
+                </a>
                 </Button>
                 <Button 
                   variant="outline" 
@@ -113,9 +122,14 @@ const Index = () => {
                   className="p-2"
                   onClick={handleViberClick}
                 >
-                  <svg className="h-4 w-4 text-purple-500" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M11.398.002C5.473.002.565 4.91.565 10.835c0 2.24.723 4.31 1.95 5.996L.895 23.467l7.275-1.835c1.639.95 3.572 1.496 5.625 1.496 5.926 0 10.834-4.908 10.834-10.834C24.629 5.368 19.721.435 13.796.435L11.398.002zm5.642 6.616v.001c0 .484-.484.726-.726.726h-1.694c-.242 0-.726-.484-.726-.726v-2.42c0-.242.484-.726.726-.726h1.694c.484 0 .726.484.726.726v2.419zm-8.065 0v.001c0 .484-.484.726-.726.726H6.555c-.242 0-.726-.484-.726-.726v-2.42c0-.242.484-.726.726-.726h1.694c.484 0 .726.484.726.726v2.419z"/>
-                  </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25px" height="25px" viewBox="0 0 25 25" version="1.1">
+                <g id="surface1">
+                <path style=" stroke:none;fill-rule:nonzero;fill:rgb(48.235294%,31.764707%,61.56863%);fill-opacity:1;" d="M 3.125 0 L 21.875 0 C 23.601562 0 25 1.398438 25 3.125 L 25 21.875 C 25 23.601562 23.601562 25 21.875 25 L 3.125 25 C 1.398438 25 0 23.601562 0 21.875 L 0 3.125 C 0 1.398438 1.398438 0 3.125 0 Z M 3.125 0 "/>
+                <path style=" stroke:none;fill-rule:evenodd;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 20.601562 16.867188 C 20.003906 16.386719 19.371094 15.957031 18.742188 15.519531 C 17.492188 14.640625 16.351562 14.574219 15.417969 15.984375 C 14.894531 16.777344 14.160156 16.8125 13.394531 16.464844 C 11.28125 15.507812 9.652344 14.03125 8.695312 11.882812 C 8.273438 10.933594 8.277344 10.082031 9.265625 9.410156 C 9.789062 9.054688 10.316406 8.632812 10.277344 7.855469 C 10.222656 6.84375 7.761719 3.460938 6.792969 3.101562 C 6.390625 2.957031 5.988281 2.964844 5.582031 3.101562 C 3.304688 3.867188 2.363281 5.738281 3.265625 7.957031 C 5.957031 14.570312 10.699219 19.175781 17.226562 21.984375 C 17.597656 22.144531 18.011719 22.207031 18.21875 22.265625 C 19.707031 22.28125 21.445312 20.847656 21.949219 19.429688 C 22.433594 18.0625 21.410156 17.519531 20.601562 16.867188 Z M 13.285156 3.78125 C 18.054688 4.515625 20.253906 6.785156 20.863281 11.589844 C 20.917969 12.03125 20.753906 12.699219 21.386719 12.710938 C 22.050781 12.726562 21.890625 12.066406 21.894531 11.621094 C 21.949219 7.097656 18.003906 2.902344 13.421875 2.746094 C 13.078125 2.796875 12.359375 2.507812 12.316406 3.285156 C 12.285156 3.804688 12.890625 3.71875 13.285156 3.78125 Z M 13.285156 3.78125 "/>
+                <path style=" stroke:none;fill-rule:evenodd;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 14.21875 5.097656 C 13.757812 5.042969 13.152344 4.828125 13.046875 5.464844 C 12.933594 6.132812 13.609375 6.0625 14.042969 6.160156 C 16.988281 6.820312 18.015625 7.890625 18.5 10.816406 C 18.570312 11.242188 18.429688 11.90625 19.15625 11.792969 C 19.691406 11.714844 19.496094 11.144531 19.542969 10.8125 C 19.566406 8.007812 17.160156 5.453125 14.21875 5.097656 Z M 14.21875 5.097656 "/>
+                <path style=" stroke:none;fill-rule:evenodd;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 14.488281 7.394531 C 14.179688 7.402344 13.882812 7.433594 13.769531 7.761719 C 13.597656 8.25 13.953125 8.367188 14.316406 8.425781 C 15.527344 8.621094 16.160156 9.332031 16.28125 10.539062 C 16.316406 10.863281 16.523438 11.128906 16.839844 11.09375 C 17.277344 11.039062 17.316406 10.652344 17.304688 10.28125 C 17.324219 8.925781 15.792969 7.359375 14.488281 7.394531 Z M 14.488281 7.394531 "/>
+                </g>
+                </svg>
                 </Button>
                 <Button 
                   variant="outline" 
@@ -123,20 +137,11 @@ const Index = () => {
                   className="p-2"
                   onClick={handleInstagramClick}
                 >
-                  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none">
-                    <defs>
-                      <linearGradient id="instagram-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#833ab4"/>
-                        <stop offset="25%" stopColor="#c13584"/>
-                        <stop offset="50%" stopColor="#e1306c"/>
-                        <stop offset="75%" stopColor="#fd1d1d"/>
-                        <stop offset="100%" stopColor="#f77737"/>
-                      </linearGradient>
-                    </defs>
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="url(#instagram-gradient)"/>
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="white"/>
-                    <line x1="17.5" y1="6.5" x2="17.5" y2="6.5" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-                  </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25px" height="25px" viewBox="0 0 25 25" version="1.1">
+                <g id="surface1">
+                <path style=" stroke:none;fill-rule:nonzero;fill:rgb(84.313726%,18.431373%,50.196081%);fill-opacity:1;" d="M 12.511719 6.167969 C 9.007812 6.167969 6.183594 8.992188 6.183594 12.496094 C 6.183594 15.996094 9.007812 18.820312 12.511719 18.820312 C 16.011719 18.820312 18.835938 15.996094 18.835938 12.496094 C 18.835938 8.992188 16.011719 6.167969 12.511719 6.167969 Z M 12.511719 16.609375 C 10.246094 16.609375 8.398438 14.761719 8.398438 12.496094 C 8.398438 10.226562 10.242188 8.382812 12.511719 8.382812 C 14.78125 8.382812 16.625 10.226562 16.625 12.496094 C 16.625 14.761719 14.773438 16.609375 12.511719 16.609375 Z M 20.570312 5.910156 C 20.570312 6.730469 19.910156 7.386719 19.097656 7.386719 C 18.277344 7.386719 17.621094 6.722656 17.621094 5.910156 C 17.621094 5.09375 18.28125 4.433594 19.097656 4.433594 C 19.910156 4.433594 20.570312 5.09375 20.570312 5.910156 Z M 24.761719 7.40625 C 24.667969 5.429688 24.21875 3.679688 22.769531 2.238281 C 21.328125 0.792969 19.574219 0.34375 17.597656 0.242188 C 15.5625 0.128906 9.453125 0.128906 7.417969 0.242188 C 5.445312 0.335938 3.695312 0.789062 2.246094 2.230469 C 0.800781 3.671875 0.351562 5.425781 0.253906 7.402344 C 0.136719 9.4375 0.136719 15.542969 0.253906 17.582031 C 0.347656 19.558594 0.800781 21.308594 2.246094 22.753906 C 3.695312 24.195312 5.441406 24.648438 7.417969 24.746094 C 9.453125 24.863281 15.5625 24.863281 17.597656 24.746094 C 19.574219 24.652344 21.328125 24.199219 22.769531 22.753906 C 24.210938 21.308594 24.664062 19.558594 24.761719 17.582031 C 24.878906 15.542969 24.878906 9.445312 24.761719 7.40625 Z M 22.128906 19.769531 C 21.699219 20.847656 20.871094 21.679688 19.785156 22.113281 C 18.160156 22.757812 14.304688 22.609375 12.511719 22.609375 C 10.714844 22.609375 6.855469 22.753906 5.238281 22.113281 C 4.15625 21.683594 3.328125 20.851562 2.890625 19.769531 C 2.246094 18.144531 2.394531 14.289062 2.394531 12.496094 C 2.394531 10.699219 2.253906 6.839844 2.890625 5.222656 C 3.320312 4.140625 4.152344 3.308594 5.238281 2.875 C 6.863281 2.230469 10.714844 2.378906 12.511719 2.378906 C 14.304688 2.378906 18.164062 2.238281 19.785156 2.875 C 20.863281 3.304688 21.695312 4.136719 22.128906 5.222656 C 22.773438 6.84375 22.625 10.699219 22.625 12.496094 C 22.625 14.289062 22.773438 18.148438 22.128906 19.769531 Z M 22.128906 19.769531 "/>
+                </g>
+                </svg>
                 </Button>
               </div>
               <div className="text-right hidden md:block">
@@ -144,7 +149,9 @@ const Index = () => {
                 <p className="text-xs text-gray-600">Минск, Беларусь</p>
               </div>
               <Button className="bg-amber-600 hover:bg-amber-700">
+              <a href="#contacts">
                 Оставить заявку
+              </a>
               </Button>
             </div>
           </div>
@@ -168,7 +175,11 @@ const Index = () => {
                 Подарочная упаковка. Скидки от 10% в зависимости от количества. Доставка по Беларуси и России.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-amber-600 hover:bg-amber-700">
+                <Button
+                size="lg"
+                className="bg-amber-600 hover:bg-amber-700"
+                onClick={handleTelegramClick}
+                >
                   Рассчитать заказ
                 </Button>
                 <Button 
@@ -210,7 +221,11 @@ const Index = () => {
         {/* CTA Button after Hero */}
         <div className="container mx-auto px-4 pt-8">
           <div className="text-center">
-            <Button size="lg" className="bg-amber-600 hover:bg-amber-700">
+            <Button
+            size="lg"
+            className="bg-amber-600 hover:bg-amber-700"
+            onClick={handleTelegramClick}
+            >
               Рассчитать стоимость
             </Button>
           </div>
@@ -260,7 +275,11 @@ const Index = () => {
         {/* CTA Button after Benefits */}
         <div className="container mx-auto px-4 pt-8">
           <div className="text-center">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+            <Button
+            size="lg"
+            className="bg-blue-600 hover:bg-blue-700"
+            onClick={handleTelegramClick}
+            >
               Выбрать полотенца
             </Button>
           </div>
@@ -270,13 +289,13 @@ const Index = () => {
       {/* First Carousel - between "Почему выбирают нас" and "Каталог полотенец" */}
       <TowelCarousel images={[
         "/lovable-uploads/ee09870d-04e5-4ed0-ad5a-3c2235e3fd75.png",
-        "/lovable-uploads/fdcd1846-7c62-4aeb-9a3d-8838fed3a055.png",
+        "/lovable-uploads/12ba7a46-7134-4624-b3d4-9fbc0b816f59.png",
         "/lovable-uploads/2a544414-329d-4abc-b345-1191b817b92c.png",
-        "/lovable-uploads/f6df139d-aa2a-4952-aa61-d164efa82f24.png",
+        "/lovable-uploads/596afad8-3979-4d8a-88e8-f5e8d35ad177.png",
         "/lovable-uploads/d8d36018-48d7-4c21-8271-6bc4c648b3e1.png",
-        "/lovable-uploads/b7db4e1a-ce9d-4dbe-916f-a424ec2185d1.png",
+        "/lovable-uploads/cb7e78b4-b53a-4a5e-a38a-eac127ec6632.png",
         "/lovable-uploads/69a5a933-331d-4add-882a-132a7bfd847a.png",
-        "/lovable-uploads/ad5bf7b1-2a77-4b15-8e1d-7ef5ae1b36f9.png"
+        "/lovable-uploads/f5d80a56-50cf-4e1b-b93c-304789d86c3d.png"
       ]} />
 
       {/* Catalog Section */}
@@ -411,7 +430,11 @@ const Index = () => {
         {/* CTA Button after Catalog */}
         <div className="container mx-auto px-4 pt-8">
           <div className="text-center">
-            <Button size="lg" className="bg-green-600 hover:bg-green-700">
+            <Button
+            size="lg"
+            className="bg-green-600 hover:bg-green-700"
+            onClick={handleTelegramClick}
+            >
               Рассчитать заказ
             </Button>
           </div>
@@ -493,7 +516,11 @@ const Index = () => {
         {/* CTA Button after Pricing */}
         <div className="container mx-auto px-4 pt-8">
           <div className="text-center">
-            <Button size="lg" className="bg-purple-600 hover:bg-purple-700">
+            <Button
+            size="lg"
+            className="bg-purple-600 hover:bg-purple-700"
+            onClick={handleTelegramClick}
+            >
               Узнать условия
             </Button>
           </div>
@@ -503,13 +530,13 @@ const Index = () => {
       {/* Second Carousel - between "Выгодные условия" and "Наши услуги" */}
       <TowelCarousel images={[
         "/lovable-uploads/af3ccc65-18af-4591-b511-5345978cb39a.png",
-        "/lovable-uploads/12ba7a46-7134-4624-b3d4-9fbc0b816f59.png",
+        "/lovable-uploads/fdcd1846-7c62-4aeb-9a3d-8838fed3a055.png",
         "/lovable-uploads/acd0d9a5-e1e3-443c-8727-2d1fb23f1053.png",
-        "/lovable-uploads/596afad8-3979-4d8a-88e8-f5e8d35ad177.png",
+        "/lovable-uploads/f6df139d-aa2a-4952-aa61-d164efa82f24.png",
         "/lovable-uploads/d6e1ae17-16ae-4e5c-98ec-d209b0b25944.png",
-        "/lovable-uploads/cb7e78b4-b53a-4a5e-a38a-eac127ec6632.png",
+        "/lovable-uploads/b7db4e1a-ce9d-4dbe-916f-a424ec2185d1.png",
         "/lovable-uploads/aa44f238-6ef8-4d69-b2c4-97f0543fa51a.png",
-        "/lovable-uploads/f5d80a56-50cf-4e1b-b93c-304789d86c3d.png"
+        "/lovable-uploads/ad5bf7b1-2a77-4b15-8e1d-7ef5ae1b36f9.png"
       ]} />
 
       {/* Services Section */}
@@ -576,7 +603,11 @@ const Index = () => {
         {/* CTA Button after Services */}
         <div className="container mx-auto px-4 pt-8">
           <div className="text-center">
-            <Button size="lg" className="bg-orange-600 hover:bg-orange-700">
+            <Button
+            size="lg"
+            className="bg-orange-600 hover:bg-orange-700"
+            onClick={handleTelegramClick}
+            >
               Заказать консультацию
             </Button>
           </div>
@@ -618,7 +649,10 @@ const Index = () => {
                   value={formData.message}
                   onChange={(e) => setFormData({...formData, message: e.target.value})}
                 />
-                <Button className="w-full bg-amber-600 hover:bg-amber-700" size="lg">
+                <Button
+                className="w-full bg-amber-600 hover:bg-amber-700"
+                size="lg"
+                onClick={sendMessageToBot(formData)}>
                   Отправить заявку
                 </Button>
               </div>
