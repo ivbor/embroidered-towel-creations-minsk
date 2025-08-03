@@ -37,7 +37,7 @@ const Index = () => {
   });
 
   async function sendMessageToBot(message) {
-    const response = await fetch("http://34.172.218.129:8100/send-message", {
+    const response = await fetch("https://api.rusan.by/send-message", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
