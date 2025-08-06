@@ -72,10 +72,10 @@ const Index = () => {
       <div className="fixed bottom-6 right-6 z-50">
         <Button 
           onClick={handlePhoneCall}
-          className="w-14 h-14 rounded-full bg-red-600 hover:bg-red-700 shadow-lg"
+          className="w-28 h-28 rounded-full bg-red-600 hover:bg-red-700 shadow-lg"
           size="icon"
         >
-          <Phone className="h-6 w-6 text-white" />
+          <Phone className="h-12 w-12 text-white" />
         </Button>
       </div>
 
