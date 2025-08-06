@@ -73,7 +73,7 @@ const Index = () => {
         <Button 
           onClick={handlePhoneCall}
           className="w-28 h-28 rounded-full bg-red-600 hover:bg-red-700 shadow-lg"
-          size="icon"
+          size="lg"
         >
           <Phone className="h-12 w-12 text-white" />
         </Button>
