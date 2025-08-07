@@ -80,9 +80,10 @@ const Index = () => {
       </div>
 
       {/* Header */}
-      <header className="bg-white shadow-sm border-b">
+      <header className="bg-white shadow-sm border-b sticky top-0 z-40">
         <div className="container mx-auto px-4 py-4">
-          <div className="flex justify-between items-center">
+          {/* Desktop Layout */}
+          <div className="hidden md:flex justify-between items-center">
             <div className="flex items-center space-x-3">
               <div>
                 <img 
@@ -93,7 +94,7 @@ const Index = () => {
                 <p className="text-sm text-gray-600">Швейное ателье. Вышивка. Ремонт.</p>
               </div>
             </div>
-            <nav className="hidden md:flex space-x-8">
+            <nav className="flex space-x-8">
               <a href="#catalog" className="text-gray-700 hover:text-amber-600 transition-colors">Каталог</a>
               <a href="#services" className="text-gray-700 hover:text-amber-600 transition-colors">Услуги</a>
               <a href="#portfolio" className="text-gray-700 hover:text-amber-600 transition-colors">Портфолио</a>
