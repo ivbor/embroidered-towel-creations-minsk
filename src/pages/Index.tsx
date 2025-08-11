@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
@@ -29,6 +30,7 @@ import {
 } from 'lucide-react';
 
 const Index = () => {
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -36,18 +38,47 @@ const Index = () => {
     message: ''
   });
 
-  async function sendMessageToBot(message) {
-    const response = await fetch("https://api.rusan.by/send-message", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ "message": message })
-    });
+  const handleFormSubmit = async () => {
+    try {
+      const message = `Новая заявка:
+Имя: ${formData.name}
+Телефон: ${formData.phone}
+Email: ${formData.email}
+Сообщение: ${formData.message}`;
 
-    const data = await response.json();
-    if (!response.ok) throw new Error(data.details || "Failed to send");
-    return data;
+      const response = await fetch("https://api.rusan.by/send-message", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ "message": message })
+      });
+
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.details || "Failed to send");
+
+      // Success
+      toast({
+        title: "Заявка отправлена!",
+        description: "Мы свяжемся с вами в ближайшее время.",
+      });
+
+      // Clear form
+      setFormData({
+        name: '',
+        phone: '',
+        email: '',
+        message: ''
+      });
+
+    } catch (error) {
+      // Error
+      toast({
+        title: "Ошибка отправки",
+        description: "Произошла ошибка при отправке заявки. Попробуйте позже.",
+        variant: "destructive",
+      });
+    }
   };
 
   const handleTelegramClick = () => {
@@ -720,7 +751,7 @@ const Index = () => {
                 <Button
                 className="w-full bg-amber-600 hover:bg-amber-700"
                 size="lg"
-                onClick={() => sendMessageToBot(formData)}>
+                onClick={handleFormSubmit}>
                   Отправить заявку
                 </Button>
               </div>
