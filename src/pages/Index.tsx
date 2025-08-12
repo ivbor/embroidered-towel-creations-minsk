@@ -136,7 +136,7 @@ Email: ${formData.email}
               <div className="flex items-center space-x-2">
                 <Button 
                   variant="outline" 
-                  size="sm" 
+                  size="lg" 
                   className="p-2"
                   onClick={handleTelegramClick}
                 >
@@ -150,7 +150,7 @@ Email: ${formData.email}
                 </Button>
                 <Button 
                   variant="outline" 
-                  size="sm" 
+                  size="lg" 
                   className="p-2"
                   onClick={handleViberClick}
                 >
@@ -165,7 +165,7 @@ Email: ${formData.email}
                 </Button>
                 <Button 
                   variant="outline" 
-                  size="sm" 
+                  size="lg" 
                   className="p-2"
                   onClick={handleInstagramClick}
                 >
