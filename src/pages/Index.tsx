@@ -803,7 +803,7 @@ Email: ${formData.email}
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-5 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 { /*
@@ -859,6 +859,15 @@ Email: ${formData.email}
                 <p>г. Минск, ул. Гамарника, 22</p>
               </div>
             </div>
+
+            <div>
+              <h4 className="font-semibold mb-4">ИП Литвин Иван Григорьевич 220040 г. Минск, ул. Восточная 38-184</h4>
+              <div className="space-y-2 text-gray-400 text-sm">
+                <p>р/с № BY25AKBB30130000058540000000, Банк: ОАО "АСБ Беларусбанк" ул.Мясникова, 32, 220050, г.Минск БИК AKBBBY2X</p>
+                <p>Тел. +375 44 564-14-00</p>
+                <p>УНП 193309437</p>
+              </div>
+            </div>
           </div>
           
           <Separator className="my-8 bg-gray-700" />
@@ -870,6 +879,9 @@ Email: ${formData.email}
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-gray-400 hover:text-white text-sm">Политика конфиденциальности</a>
               <a href="#" className="text-gray-400 hover:text-white text-sm">Условия использования</a>
+              <a href="#" className="text-gray-400 hover:text-white text-sm">Договор оферты
+              <object data=""></object>
+              </a>
             </div>
           </div>
         </div>
