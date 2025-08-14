@@ -879,8 +879,7 @@ Email: ${formData.email}
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-gray-400 hover:text-white text-sm">Политика конфиденциальности</a>
               <a href="#" className="text-gray-400 hover:text-white text-sm">Условия использования</a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm">Договор оферты
-              <object data=""></object>
+              <a href="oferta.pdf" className="text-gray-400 hover:text-white text-sm">Договор оферты
               </a>
             </div>
           </div>
