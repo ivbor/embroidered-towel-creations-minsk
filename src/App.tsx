@@ -46,7 +46,6 @@ import { FAQ } from './components/FAQ'
 import { Footer } from './components/Footer'
  
 export default function App() {
-  return <div className="p-6">Hello</div>
   return (
     <div className="min-h-screen bg-white text-gray-900">
       <Header />
