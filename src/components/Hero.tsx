@@ -16,7 +16,7 @@ export const Hero: React.FC = () => {
             <li>Изготовление от 1 дня</li>
           </ul>
         </div>
-        <div className="rounded-2xl bg-white p-6 shadow">
+        <div className="rounded-3xl bg-stone-100 p-6 hover:shadow-md transition-shadow">
           <LeadForm/>
         </div>
       </div>
