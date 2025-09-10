@@ -51,7 +51,7 @@ export const Header: React.FC = () => {
           {/* Center / Row 2: navbar (centered) */}
           <nav className="navbar md:col-start-2 md:row-start-2 hidden md:flex items-center justify-center gap-6">
             {nav.map(i => (
-              <button className="rounded-full px-5 py-2 text-sm font-semibold bg-gray-400 text-black shadow hover:scale-[1.02] active:scale-100 transition-transform btn btn--primary">
+              <button className="rounded-full px-5 py-2 text-sm font-semibold bg-gray-200 text-black shadow hover:scale-[1.02] active:scale-100 transition-transform btn btn--primary">
               <a
                 key={i.id}
                 href={`#${i.id}`}
