@@ -13,7 +13,7 @@ export const Benefits: React.FC = () => (
   <h2 className="text-2xl font-bold mb-6 text-center">Почему выбирают нас</h2>
 
   {/* Mobile: 1 col  →  Tablet: 2 cols  →  Desktop: 4 cols */}
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
     {items.map((t) => (
       <div
         key={t}
