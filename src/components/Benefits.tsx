@@ -17,7 +17,7 @@ export const Benefits: React.FC = () => (
     {items.map((t) => (
       <div
         key={t}
-        className="rounded-3xl border p-6 min-h-[72px] h-full flex items-center justify-center text-center hover:shadow-md transition-shadow"
+        className="rounded-3xl border p-6 min-h-[72px] h-full flex items-center justify-center text-center hover:shadow-md transition-shadow bg-gray-200"
       >
         <p>{t}</p>
       </div>
