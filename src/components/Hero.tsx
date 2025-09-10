@@ -9,7 +9,7 @@ export const Hero: React.FC = () => {
           <h1 className="text-3xl md:text-4xl font-extrabold leading-tight">
             Махровые <span className="text-orange-300">полотенца</span><br /> с индивидуальной вышивкой
           </h1>
-          <ul className="space-y-2 text-2xl">
+          <ul className="space-y-2 text-2xl list-style-type: circle">
             <li>1000+ готовых макетов вышивки</li>
             <li>Подарочная упаковка</li>
             <li>Изготовление от 1 дня</li>
