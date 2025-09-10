@@ -51,7 +51,7 @@ export default function App() {
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <div className="min-h-screen bg-stone-300 text-gray-900">
+        <div className="min-h-screen bg-stone-100 text-gray-900">
           <Header />
           <main className="flex flex-col">
             <section id="hero"><Hero /></section>
