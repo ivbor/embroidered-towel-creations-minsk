@@ -7,13 +7,12 @@ export const Hero: React.FC = () => {
       <div className="mx-auto max-w-6xl px-4 py-10 grid md:grid-cols-2 gap-8">
         <div className="flex flex-col gap-4">
           <h1 className="text-3xl md:text-4xl font-extrabold leading-tight">
-            Махровые полотенца с индивидуальной вышивкой
+            Махровые <span className="text-amber-600">полотенца</span><br /> с индивидуальной вышивкой
           </h1>
           <ul className="space-y-2 text-sm">
             <li>1000+ готовых макетов вышивки</li>
             <li>Подарочная упаковка</li>
             <li>Изготовление от 1 дня</li>
-            <li>Доставка по СНГ • 100% гарантия • Оптовые цены</li>
           </ul>
         </div>
         <div className="rounded-2xl bg-white p-6 shadow">
