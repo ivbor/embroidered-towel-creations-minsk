@@ -10,8 +10,8 @@ export const Audience: React.FC = () => (
     <h2 className="text-2xl font-bold mb-6 text-center">Лучший выбор для</h2>
     <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
       {groups.map((g)=>(
-        <figure key={g} className="rounded-3xl border p-4 bg-white">
-          <figcaption className="text-sm font-medium">{g}</figcaption>
+        <figure key={g} className="rounded-3xl border p-6 bg-white">
+          <figcaption className="text-sm font-medium text-center">{g}</figcaption>
         </figure>
       ))}
     </div>
