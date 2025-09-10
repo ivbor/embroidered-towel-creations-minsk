@@ -60,16 +60,19 @@ export const LeadForm: React.FC = () => {
       <div className="space-y-4">
         <Input 
           placeholder="Имя"
+          className="text-center placeholder:text-center"
           value={formData.name}
           onChange={(e) => setFormData({...formData, name: e.target.value})}
         />
         <Input 
           placeholder="Телефон*"
+          className="text-center placeholder:text-center"
           value={formData.phone}
           onChange={(e) => setFormData({...formData, phone: e.target.value})}
         />
         <Input 
           placeholder="Почта"
+          className="text-center placeholder:text-center"
           type="email"
           value={formData.email}
           onChange={(e) => setFormData({...formData, email: e.target.value})}
