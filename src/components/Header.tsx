@@ -22,7 +22,7 @@ export const Header: React.FC = () => {
           />
           <button
             onClick={() => setOpen(true)}
-            className="rounded-full px-4 py-2 text-sm font-semibold bg-amber-400 text-black shadow btn btn--primary"
+            className="rounded-full px-4 py-2 text-sm font-semibold bg-orange-300 hover:bg-orange-400 text-black shadow btn btn--primary"
           >
             Оставить заявку
           </button>
