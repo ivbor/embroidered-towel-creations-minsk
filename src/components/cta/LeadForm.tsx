@@ -55,7 +55,7 @@ export const LeadForm: React.FC = () => {
 
   return (
     <div>
-      <h2 className="text-1xl font-bold text-gray-900 mb-6">Оставьте заявку на индивидуальный расчет!</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Оставьте заявку на индивидуальный расчет!</h2>
       
       <div className="space-y-4">
         <Input 
@@ -78,7 +78,7 @@ export const LeadForm: React.FC = () => {
           onChange={(e) => setFormData({...formData, email: e.target.value})}
         />
         <Button
-          className="w-full bg-amber-600 hover:bg-amber-700 !text-black hover:!text-black"
+          className="w-full bg-orange-300 hover:bg-orange-400 !text-black hover:!text-black"
           size="lg"
           onClick={handleFormSubmit}>
             Получить скидку -10%!
