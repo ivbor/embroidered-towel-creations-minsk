@@ -11,7 +11,7 @@ const items = [
 export const Benefits: React.FC = () => (
   <section className="mx-auto max-w-6xl px-4 py-10">
     <h2 className="text-2xl font-bold mb-6 text-center">Почему выбирают нас</h2>
-    <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 items-stretch">
+    <div className="grid grid-flow-col auto-cols-fr gap-4 overflow-x-auto sm:grid-cols-2 md:grid-cols-4 gap-4 items-stretch">
       {items.map((t) => (
         <div key={t} className="rounded-3xl border p-4 hover:shadow-md transition-shadow h-full text-center justify-center">
           <p>{t}</p>
