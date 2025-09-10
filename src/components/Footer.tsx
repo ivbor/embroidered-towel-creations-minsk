@@ -27,7 +27,7 @@ export const Footer: React.FC = () => {
             <div className="self-start">
               <button
                 onClick={()=>setOpen(true)}
-                className="rounded-full px-4 py-2 text-sm font-semibold bg-amber-400 text-black shadow hover:scale-[1.02] active:scale-100 transition-transform"
+                className="rounded-full px-4 py-2 text-sm font-semibold bg-orange-300 hover:bg-orange-400 text-black shadow hover:scale-[1.02] active:scale-100 transition-transform"
               >
                 Оставить заявку
               </button>
