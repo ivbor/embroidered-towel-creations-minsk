@@ -3,7 +3,7 @@ import { LeadForm } from './cta/LeadForm'
 
 export const Hero: React.FC = () => {
   return (
-    <div className="border-b bg-gray-50">
+    <div className="bg-white rounded-3xl m-3">
       <div className="mx-auto max-w-6xl px-4 py-10 grid md:grid-cols-2 gap-8">
         <div className="flex flex-col gap-4 items-center justify-center">
           <h1 className="text-3xl md:text-4xl font-extrabold leading-tight">
