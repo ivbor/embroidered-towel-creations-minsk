@@ -13,7 +13,7 @@ export const Benefits: React.FC = () => (
     <h2 className="text-2xl font-bold mb-6 text-center">Почему выбирают нас</h2>
     <div className="grid grid-flow-col auto-cols-fr gap-4 overflow-x-auto sm:grid-cols-2 md:grid-cols-4 gap-4 items-stretch">
       {items.map((t) => (
-        <div key={t} className="rounded-3xl border p-4 hover:shadow-md transition-shadow h-full text-center justify-center">
+        <div key={t} className="rounded-3xl border bg-gray-200 p-4 hover:shadow-md transition-shadow h-full text-center justify-center">
           <p>{t}</p>
         </div>
       ))}
