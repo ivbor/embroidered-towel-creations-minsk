@@ -67,7 +67,7 @@ export const Header: React.FC = () => {
           <div className="hidden md:flex row-span-2 items-center justify-end">
             <button
               onClick={() => setOpen(true)}
-              className="rounded-full px-5 py-2 text-sm font-semibold bg-amber-400 text-black shadow hover:scale-[1.02] active:scale-100 transition-transform btn btn--primary"
+              className="rounded-full px-5 py-2 text-sm font-semibold bg-amber-600 hover:bg-amber-700 text-black shadow hover:scale-[1.02] active:scale-100 transition-transform btn btn--primary"
             >
               Оставить заявку
             </button>
