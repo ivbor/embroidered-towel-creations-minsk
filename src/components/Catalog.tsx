@@ -28,7 +28,7 @@ export const Catalog: React.FC = () => {
       <section id="catalog" className="py-16 bg-stone-100 m-6">
         {/* Catalog Section */}
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
+          <div className="text-center mb-10">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Характеристики</h2>
           </div>
           
@@ -73,6 +73,21 @@ export const Catalog: React.FC = () => {
             </Card>
           </div>
         </div>
+
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Варианты цветов</h2>
+        </div>
+        
+        <TowelCarousel images={[
+        "/lovable-uploads/ee09870d-04e5-4ed0-ad5a-3c2235e3fd75.png",
+        "/lovable-uploads/12ba7a46-7134-4624-b3d4-9fbc0b816f59.png",
+        "/lovable-uploads/2a544414-329d-4abc-b345-1191b817b92c.png",
+        "/lovable-uploads/596afad8-3979-4d8a-88e8-f5e8d35ad177.png",
+        "/lovable-uploads/d8d36018-48d7-4c21-8271-6bc4c648b3e1.png",
+        "/lovable-uploads/cb7e78b4-b53a-4a5e-a38a-eac127ec6632.png",
+        "/lovable-uploads/69a5a933-331d-4add-882a-132a7bfd847a.png",
+        "/lovable-uploads/f5d80a56-50cf-4e1b-b93c-304789d86c3d.png"
+      ]} />
         <TowelCarousel images={[
         "/lovable-uploads/af3ccc65-18af-4591-b511-5345978cb39a.png",
         "/lovable-uploads/fdcd1846-7c62-4aeb-9a3d-8838fed3a055.png",
