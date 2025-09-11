@@ -22,7 +22,7 @@ import {
   MessageCircle
 } from 'lucide-react';
 
-export const Catalog: React.FC = () => (
+export const Catalog: React.FC = () => {
   // <section className="mx-auto max-w-6xl px-4 py-12">
   //   <h2 className="text-2xl font-bold mb-6">Каталог</h2>
   //   <div className="grid md:grid-cols-2 gap-6">
@@ -44,6 +44,7 @@ export const Catalog: React.FC = () => (
   //     </div>
   //   </div>
   // </section>
+  return (
   {/* Catalog Section */}
       <section id="catalog" className="py-16 bg-stone-50">
         <div className="container mx-auto px-4">
@@ -186,4 +187,5 @@ export const Catalog: React.FC = () => (
           </div>
         </div>
       </section>
-)
+  )
+}
