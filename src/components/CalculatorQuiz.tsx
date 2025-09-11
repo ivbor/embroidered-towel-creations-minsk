@@ -16,11 +16,11 @@ export const CalculatorQuiz: React.FC = () => {
 
   const q = questions[step]
   const leftCta = useMemo(()=>(
-    <div className="rounded-2xl border p-6 bg-white">
-      <h3 className="text-xl font-bold mb-2">Ответьте на {questions.length} вопроса и получите:</h3>
-        <div className="rounded-2xl border p-6 bg-gray-200">Скидки до 20%</div>
-        <div className="rounded-2xl border p-6 bg-gray-200">Бесплатную подарочную упаковку</div>
-        <div className="rounded-2xl border p-6 bg-gray-200">Индивидуальную консультацию</div>
+    <div className="rounded-2xl border p-6 bg-stone-100">
+      <h3 className="text-xl font-bold mb-2 text-center">Ответьте на {questions.length} вопроса и получите:</h3>
+        <div className="rounded-2xl border m-6 bg-gray-200 text-center">Скидки до 20%</div>
+        <div className="rounded-2xl border m-6 bg-gray-200 text-center">Бесплатную подарочную упаковку</div>
+        <div className="rounded-2xl border m-6 bg-gray-200 text-center">Индивидуальную консультацию</div>
     </div>
   ),[])
 
@@ -38,19 +38,21 @@ export const CalculatorQuiz: React.FC = () => {
     <section className="mx-auto max-w-6xl px-4 py-12">
       <h2 className="text-2xl font-bold mb-6 text-center">Рассчитайте срок изготовления заказа</h2>
       {!done ? (
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-6 bg-white">
           {leftCta}
-          <div className="rounded-2xl border p-6 bg-white">
+          <div className="rounded-2xl border p-6 bg-stone-100">
 {/*             <div className="text-sm text-gray-500 mb-2">Шаг {step+1} из {questions.length}</div> */}
-            <h3 className="text-lg font-semibold mb-4">{q.title}</h3>
-            <div className="grid grid-cols-2 gap-3">
-              {q.options.map(opt=>(
-                <button
-                  key={opt}
-                  onClick={()=>choose(opt)}
-                  className="rounded-xl border px-3 py-2 hover:shadow-sm active:scale-[.99] transition bg-gray-200"
-                >{opt}</button>
-              ))}
+            <div className="rounded-2xl bg-white">
+              <h3 className="text-lg font-semibold mb-4">{q.title}</h3>
+              <div className="rounded-2xl grid grid-cols-2 gap-3 bg-white">
+                {q.options.map(opt=>(
+                  <button
+                    key={opt}
+                    onClick={()=>choose(opt)}
+                    className="rounded-xl border px-3 py-2 hover:shadow-sm active:scale-[.99] transition bg-gray-200"
+                  >{opt}</button>
+                ))}
+              </div>
             </div>
           </div>
         </div>
