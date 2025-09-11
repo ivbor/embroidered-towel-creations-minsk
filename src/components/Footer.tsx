@@ -10,11 +10,9 @@ export const Footer: React.FC = () => {
           {/* Left: logo + tagline (image can be any src you use) */}
           <div className="flex items-start gap-3">
             <img
-              src="/logo.png"
-              alt="RUSAN"
-              className="h-16 w-auto object-contain"
-              loading="lazy"
-              decoding="async"
+            src="/lovable-uploads/d6fed386-6fc9-4b86-90f8-b64eee47a1a4.png"
+            alt="Rusan Logo"
+            className="h-8 w-auto object-contain logo"
             />
             <div className="pt-1">
               <div className="sr-only">RUSAN</div>
