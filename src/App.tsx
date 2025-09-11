@@ -62,7 +62,7 @@ export default function App() {
             <section id="catalog" className="scroll-mt-24"><Catalog /></section>
             <section id="delivery-payment" className="scroll-mt-24"><DeliveryPayment /></section>
             <section id="steps" className="scroll-mt-24"><Steps /></section>
-            <section id="clients" className="scroll-mt-24"><ClientsCarousel /></section>
+{/*             <section id="clients" className="scroll-mt-24"><ClientsCarousel /></section> */}
             <section id="reviews" className="scroll-mt-24"><InstagramGallery /></section>
 {/*             <section id="reviews"><ReviewsFlip /></section> */}
             <section id="faq" className="scroll-mt-24"><FAQ /></section>
