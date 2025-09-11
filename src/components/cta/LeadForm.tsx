@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 
-export const LeadForm: React.FC = () => {
+export const LeadForm: React.FC = ({text1, text2}) => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: '',
@@ -55,7 +55,7 @@ export const LeadForm: React.FC = () => {
 
   return (
     <div>
-      <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Оставьте заявку на индивидуальный расчет!</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">${text1}</h2>
       
       <div className="space-y-4">
         <Input 
@@ -81,7 +81,7 @@ export const LeadForm: React.FC = () => {
           className="w-full bg-orange-300 hover:bg-orange-400 !text-black hover:!text-black"
           size="lg"
           onClick={handleFormSubmit}>
-            Получить скидку -10%!
+            ${text2}
         </Button>
       </div>
     </div>
