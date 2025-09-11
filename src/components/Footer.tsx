@@ -11,7 +11,7 @@ export const Footer: React.FC = () => {
           <img
           src="/lovable-uploads/d6fed386-6fc9-4b86-90f8-b64eee47a1a4.png"
           alt="Rusan Logo"
-          className="h-8 w-auto object-contain logo"
+          className="h-16 w-auto object-contain logo"
           />
 
           {/* Middle: nav + contacts + CTA */}
