@@ -95,7 +95,7 @@ export const Catalog: React.FC = () => {
           </div>
 
           {/* Telegram Button */}
-          <div className="text-center mb-12">
+{/*           <div className="text-center mb-12">
             <Button 
               size="lg" 
               className="bg-blue-600 hover:bg-blue-700"
@@ -103,7 +103,7 @@ export const Catalog: React.FC = () => {
             >
               Узнать цвета в наличии
             </Button>
-          </div>
+          </div> */}
 
           {/* Product Categories with Background Images */}
           <div className="grid md:grid-cols-3 gap-8">
@@ -175,7 +175,7 @@ export const Catalog: React.FC = () => {
           </div>
         </div>
         {/* CTA Button after Catalog */}
-        <div className="container mx-auto px-4 pt-8">
+{/*         <div className="container mx-auto px-4 pt-8">
           <div className="text-center">
             <Button
             size="lg"
@@ -185,7 +185,7 @@ export const Catalog: React.FC = () => {
               Рассчитать заказ
             </Button>
           </div>
-        </div>
+        </div> */}
       </section>
   )
 }
