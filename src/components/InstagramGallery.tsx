@@ -20,7 +20,7 @@ const InstagramGallery: React.FC = () => {
         </div>
         
         {/* Instagram Gallery */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-8 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-8 items-stretch">
           {instagramPosts.map((permalink, index) => (
             <div key={index} className="flex justify-center items-start h-full">
               <InstagramEmbed permalink={permalink} />
