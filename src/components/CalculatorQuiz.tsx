@@ -18,11 +18,9 @@ export const CalculatorQuiz: React.FC = () => {
   const leftCta = useMemo(()=>(
     <div className="rounded-2xl border p-6 bg-white">
       <h3 className="text-xl font-bold mb-2">Ответьте на {questions.length} вопроса и получите:</h3>
-      <ul className="list-disc ml-5 space-y-1 text-sm">
-        <li>Скидки до 20%</li>
-        <li>Бесплатную подарочную упаковку</li>
-        <li>Индивидуальную консультацию</li>
-      </ul>
+        <div className="rounded-2xl border p-6 bg-gray-200">Скидки до 20%</div>
+        <div className="rounded-2xl border p-6 bg-gray-200">Бесплатную подарочную упаковку</div>
+        <div className="rounded-2xl border p-6 bg-gray-200">Индивидуальную консультацию</div>
     </div>
   ),[])
 
@@ -38,19 +36,19 @@ export const CalculatorQuiz: React.FC = () => {
 
   return (
     <section className="mx-auto max-w-6xl px-4 py-12">
-      <h2 className="text-2xl font-bold mb-6">Калькулятор расчета цены</h2>
+      <h2 className="text-2xl font-bold mb-6 text-center">Рассчитайте срок изготовления заказа</h2>
       {!done ? (
-        <div className="grid md:grid-cols-2 gap-6 items-start">
+        <div className="grid md:grid-cols-2 gap-6">
           {leftCta}
           <div className="rounded-2xl border p-6 bg-white">
-            <div className="text-sm text-gray-500 mb-2">Шаг {step+1} из {questions.length}</div>
+{/*             <div className="text-sm text-gray-500 mb-2">Шаг {step+1} из {questions.length}</div> */}
             <h3 className="text-lg font-semibold mb-4">{q.title}</h3>
             <div className="grid grid-cols-2 gap-3">
               {q.options.map(opt=>(
                 <button
                   key={opt}
                   onClick={()=>choose(opt)}
-                  className="rounded-xl border px-3 py-2 hover:shadow-sm active:scale-[.99] transition"
+                  className="rounded-xl border px-3 py-2 hover:shadow-sm active:scale-[.99] transition bg-gray-200"
                 >{opt}</button>
               ))}
             </div>
@@ -61,11 +59,11 @@ export const CalculatorQuiz: React.FC = () => {
           {leftCta}
           <div className="rounded-2xl border p-6 bg-white">
             <h3 className="text-xl font-bold mb-2">Благодарим за ответы. Наш специалист свяжется с вами в ближайшее время</h3>
-            <ul className="text-sm mb-4">
+{/*             <ul className="text-sm mb-4">
               {Object.entries(answers).map(([k,v])=>(
                 <li key={k}><span className="font-medium">{k}:</span> {v}</li>
               ))}
-            </ul>
+            </ul> */}
             <LeadForm submitLabel="Получить расчет стоимости" />
           </div>
         </div>
@@ -75,8 +73,7 @@ export const CalculatorQuiz: React.FC = () => {
         <div className="rounded-2xl border p-6 bg-gray-50">
           <div className="md:flex items-center justify-between gap-4">
             <div className="mb-4 md:mb-0">
-              <h3 className="text-lg font-semibold">Не нашли подходящий вариант?</h3>
-              <p className="text-sm text-gray-600">Индивидуальный расчет</p>
+              <h3 className="text-lg font-bold text-center">Не нашли подходящий вариант?</h3>
             </div>
             {/* phone required, name optional per brief :contentReference[oaicite:7]{index=7} */}
             <LeadForm submitLabel="Индивидуальный расчет" phoneRequired />
