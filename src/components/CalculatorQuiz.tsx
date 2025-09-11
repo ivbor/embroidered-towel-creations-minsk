@@ -69,10 +69,10 @@ export const CalculatorQuiz: React.FC = () => {
             {leftCta}
             <div className="bg-stone-100 rounded-2xl p-4 m-3 h-full">
               <div className="bg-white rounded-2xl p-6 md:p-8 m-2">
-                <h3 className="text-xl font-bold mb-2">
+                <h3 className="text-xl font-bold mb-2 text-center">
                   Благодарим за ответы. Наш специалист свяжется с вами в ближайшее время
                 </h3>
-                <LeadForm text1="Получить расчет стоимости" text2="Получить скидку -10%!" />
+                <LeadForm text1="Получить расчет стоимости" text2="Получить скидку -10%!" message={answers} />
               </div>
             </div>
           </div>
