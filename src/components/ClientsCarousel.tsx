@@ -26,7 +26,7 @@ export const ClientsCarousel: React.FC = () => {
 
   return (
     <section className="mx-auto max-w-6xl px-4 py-12">
-      <h2 className="text-2xl font-bold mb-6">Наши крупные клиенты</h2>
+      <h2 className="text-2xl font-bold mb-6 text-center">Наши крупные клиенты</h2>
       <div className="relative">
         <div
           ref={track}
