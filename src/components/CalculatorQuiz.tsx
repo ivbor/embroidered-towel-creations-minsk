@@ -72,7 +72,7 @@ export const CalculatorQuiz: React.FC = () => {
                 <h3 className="text-xl font-bold mb-2 text-center">
                   Благодарим за ответы. Наш специалист свяжется с вами в ближайшее время
                 </h3>
-                <LeadForm text1="Получить расчет стоимости" text2="Получить скидку -10%!" message={answers} />
+                <LeadForm text1="Получить расчет стоимости" text2="Получить скидку -10%!" message={JSON.stringify(answers)} />
               </div>
             </div>
           </div>
