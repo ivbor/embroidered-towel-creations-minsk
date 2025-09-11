@@ -55,7 +55,7 @@ export const LeadForm: React.FC = ({text1, text2}) => {
 
   return (
     <div>
-      <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">${text1}</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">{text1}</h2>
       
       <div className="space-y-4">
         <Input 
@@ -81,7 +81,7 @@ export const LeadForm: React.FC = ({text1, text2}) => {
           className="w-full bg-orange-300 hover:bg-orange-400 !text-black hover:!text-black"
           size="lg"
           onClick={handleFormSubmit}>
-            ${text2}
+            {text2}
         </Button>
       </div>
     </div>
