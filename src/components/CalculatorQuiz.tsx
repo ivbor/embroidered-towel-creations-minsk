@@ -68,7 +68,7 @@ export const CalculatorQuiz: React.FC = () => {
                 <li key={k}><span className="font-medium">{k}:</span> {v}</li>
               ))}
             </ul> */}
-            <LeadForm submitLabel="Получить расчет стоимости" />
+            <LeadForm text1="Получить расчет стоимости" text2="Получить скидку -10%!" />
           </div>
         </div>
       )}
@@ -90,6 +90,6 @@ export const CalculatorQuiz: React.FC = () => {
         </div>
       </div>
     </section>
-    <CTAFormModal open={open} onClose={() => setOpen(false)} />
+    <CTAFormModal text1="Оставьте заявку на индивидуальный расчет!" text2="Получить скидку -10%!" open={open} onClose={() => setOpen(false)} />
   )
 }
