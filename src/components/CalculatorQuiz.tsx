@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from 'react'
 import { LeadForm } from './cta/LeadForm'
+import { CTAFormModal } from './cta/CTAFormModal'
 
 type Q = { key: string; title: string; options: string[] }
 const questions: Q[] = [
@@ -10,6 +11,7 @@ const questions: Q[] = [
 ]
 
 export const CalculatorQuiz: React.FC = () => {
+  const [open, setOpen] = useState(false)
   const [step, setStep] = useState(0)
   const [answers, setAnswers] = useState<Record<string,string>>({})
   const [done, setDone] = useState(false)
@@ -78,10 +80,16 @@ export const CalculatorQuiz: React.FC = () => {
               <h3 className="text-lg font-bold text-center">Не нашли подходящий вариант?</h3>
             </div>
             {/* phone required, name optional per brief :contentReference[oaicite:7]{index=7} */}
-            <LeadForm submitLabel="Индивидуальный расчет" phoneRequired />
+            <button
+              onClick={() => setOpen(true)}
+              className="rounded-full px-5 py-2 text-sm font-semibold bg-orange-300 hover:bg-orange-400 text-black shadow hover:scale-[1.02] active:scale-100 transition-transform btn btn--primary"
+            >
+              Оставить заявку
+            </button>
           </div>
         </div>
       </div>
     </section>
+    <CTAFormModal open={open} onClose={() => setOpen(false)} />
   )
 }
