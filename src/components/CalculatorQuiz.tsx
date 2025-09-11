@@ -82,13 +82,13 @@ export const CalculatorQuiz: React.FC = () => {
       {/* bottom CTA block unchanged */}
       <div className="mt-8">
         <div className="rounded-2xl border p-6 bg-gray-50">
-          <div className="md:flex items-center justify-between gap-4">
+          <div className="grid md:grid-cols-2 md:flex items-center justify-between gap-4">
             <div className="mb-4 md:mb-0">
               <h3 className="text-lg font-bold text-center">Не нашли подходящий вариант?</h3>
             </div>
             <button
               onClick={() => setOpen(true)}
-              className="rounded-full px-5 py-2 text-sm font-semibold bg-orange-300 hover:bg-orange-400 text-black shadow hover:scale-[1.02] active:scale-100 transition-transform btn btn--primary"
+              className="rounded-full px-5 py-2 text-sm font-semibold bg-orange-300 hover:bg-orange-400 text-black text-center shadow hover:scale-[1.02] active:scale-100 transition-transform btn btn--primary"
             >
               Индивидуальный расчет
             </button>
