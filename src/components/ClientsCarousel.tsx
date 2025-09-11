@@ -18,20 +18,16 @@ export const ClientsCarousel: React.FC = () => {
 
   return (
     <section className="mx-auto max-w-6xl px-4 py-12">
-      <h2 className="text-2xl font-bold mb-6">Наши крупные клиенты</h2>
-      <div className="relative">
-        <div ref={track} className="flex gap-4 overflow-x-auto scroll-smooth pb-2">
-          {logos.map((l, idx)=>(
-            <div
-             key={l}
-              className={`shrink-0 w-40 h-24 rounded-xl border grid place-items-center bg-white transition-all`}
-              aria-label={l}
-            >
-              <span className="text-sm">{l}</span>
-            </div>
-          ))}
-        </div>
-      </div>
+      <h2 className="text-2xl font-bold mb-6 text-center">Наши крупные клиенты</h2>
+      <TowelCarousel images={[
+        "/lovable-uploads/Wildberries_Logo.png",
+        "/lovable-uploads/dabrabyt-logo.png",
+        "/lovable-uploads/logo-sber.png",
+        "/lovable-uploads/ozon.png",
+        "/lovable-uploads/riviera-logo.png",
+        "/lovable-uploads/tsum_533_001_3.png",
+        "/lovable-uploads/x5-logo.png"
+      ]} />
     </section>
   )
 }
