@@ -89,7 +89,7 @@ export const CalculatorQuiz: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
     <CTAFormModal text1="Оставьте заявку на индивидуальный расчет!" text2="Получить скидку -10%!" open={open} onClose={() => setOpen(false)} />
+    </section>
   )
 }
