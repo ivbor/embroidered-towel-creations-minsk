@@ -84,7 +84,7 @@ export const CalculatorQuiz: React.FC = () => {
               onClick={() => setOpen(true)}
               className="rounded-full px-5 py-2 text-sm font-semibold bg-orange-300 hover:bg-orange-400 text-black shadow hover:scale-[1.02] active:scale-100 transition-transform btn btn--primary"
             >
-              Оставить заявку
+              Индивидуальный расчет
             </button>
           </div>
         </div>
