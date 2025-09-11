@@ -44,9 +44,9 @@ export const FAQ: React.FC = () => {
           </ul>
         </div>
         <div className="rounded-2xl border p-6 bg-white">
-          <h3 className="text-lg font-semibold mb-2">Остались вопросы? Оставьте заявку и мы свяжемся с вами в течение 10 минут!</h3>
+          <h3 className="text-lg font-semibold mb-2 text-center">Остались вопросы? Оставьте заявку и мы свяжемся с вами в течение 10 минут!</h3>
           {/* Name & Phone required; email optional; phone masked on input side by browser pattern; success message handled in LeadForm */}
-          <LeadForm submitLabel="Оставить заявку" nameRequired phoneRequired />
+          <LeadForm text2="Задать вопрос"/>
         </div>
       </div>
     </section>
