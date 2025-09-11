@@ -40,12 +40,12 @@ export const CalculatorQuiz: React.FC = () => {
     <section className="mx-auto max-w-6xl px-4 py-12">
       <h2 className="text-2xl font-bold mb-6 text-center">Рассчитайте срок изготовления заказа</h2>
       {!done ? (
-        <div className="grid md:grid-cols-2 gap-6 bg-white">
+        <div className="grid md:grid-cols-2 gap-6 bg-white m-6">
           {leftCta}
-          <div className="rounded-2xl border p-6 bg-stone-100">
+          <div className="rounded-2xl border p-6 m-3 bg-stone-100">
 {/*             <div className="text-sm text-gray-500 mb-2">Шаг {step+1} из {questions.length}</div> */}
-            <div className="rounded-2xl bg-white">
-              <h3 className="text-lg font-semibold mb-4">{q.title}</h3>
+            <div className="rounded-2xl bg-white m-3">
+              <h3 className="text-lg font-semibold mb-4 text-center">{q.title}</h3>
               <div className="rounded-2xl grid grid-cols-2 gap-3 bg-white">
                 {q.options.map(opt=>(
                   <button
