@@ -74,7 +74,7 @@ export const Header: React.FC = () => {
           </div>
         </div>
       </header>
-      <CTAFormModal open={open} onClose={() => setOpen(false)} />
+      <CTAFormModal text1="Оставьте заявку на консультацию!" text2="Отправить" open={open} onClose={() => setOpen(false)} />
     </>
   )
 }
