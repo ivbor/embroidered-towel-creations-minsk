@@ -13,73 +13,79 @@ const questions: Q[] = [
 export const CalculatorQuiz: React.FC = () => {
   const [open, setOpen] = useState(false)
   const [step, setStep] = useState(0)
-  const [answers, setAnswers] = useState<Record<string,string>>({})
+  const [answers, setAnswers] = useState<Record<string, string>>({})
   const [done, setDone] = useState(false)
 
   const q = questions[step]
-  const leftCta = useMemo(()=>(
-    <div className="rounded-2xl border p-6 bg-stone-100">
-      <h3 className="text-xl font-bold mb-2 text-center">Ответьте на {questions.length} вопроса и получите:</h3>
-        <div className="rounded-2xl border m-6 bg-gray-200 text-center">Скидки до 20%</div>
-        <div className="rounded-2xl border m-6 bg-gray-200 text-center">Бесплатную подарочную упаковку</div>
-        <div className="rounded-2xl border m-6 bg-gray-200 text-center">Индивидуальную консультацию</div>
+
+  const leftCta = useMemo(() => (
+    <div className="bg-stone-100 rounded-2xl p-6 m-3 h-full flex flex-col gap-4">
+      <h3 className="text-xl font-bold text-center">Ответьте на {questions.length} вопроса и получите:</h3>
+      {/* taller tiles */}
+      <div className="rounded-2xl border bg-gray-200 text-center px-4 py-10 min-h-[104px]">Скидки до 20%</div>
+      <div className="rounded-2xl border bg-gray-200 text-center px-4 py-10 min-h-[104px]">Бесплатную подарочную упаковку</div>
+      <div className="rounded-2xl border bg-gray-200 text-center px-4 py-10 min-h-[104px]">Индивидуальную консультацию</div>
     </div>
-  ),[])
+  ), [])
 
   function choose(opt: string) {
     const next = { ...answers, [q.key]: opt }
     setAnswers(next)
-    if (step < questions.length - 1) {
-      setStep(step + 1) // auto-advance per brief :contentReference[oaicite:6]{index=6}
-    } else {
-      setDone(true)
-    }
+    if (step < questions.length - 1) setStep(step + 1)
+    else setDone(true)
   }
 
   return (
     <section className="mx-auto max-w-6xl px-4 py-12">
       <h2 className="text-2xl font-bold mb-6 text-center">Рассчитайте срок изготовления заказа</h2>
-      {!done ? (
-        <div className="grid md:grid-cols-2 gap-6 bg-white m-6">
-          {leftCta}
-          <div className="rounded-2xl border p-6 m-3 bg-stone-100">
-{/*             <div className="text-sm text-gray-500 mb-2">Шаг {step+1} из {questions.length}</div> */}
-            <div className="rounded-2xl bg-white m-3">
-              <h3 className="text-lg font-semibold mb-4 text-center">{q.title}</h3>
-              <div className="rounded-2xl grid grid-cols-2 gap-3 bg-white">
-                {q.options.map(opt=>(
-                  <button
-                    key={opt}
-                    onClick={()=>choose(opt)}
-                    className="rounded-xl border px-3 py-2 hover:shadow-sm active:scale-[.99] transition bg-gray-200"
-                  >{opt}</button>
-                ))}
+
+      {/* WHITE wrapper */}
+      <div className="rounded-3xl bg-white p-4 md:p-6 shadow-sm">
+        {!done ? (
+          // Two equal columns; each column gets margin inside white wrapper
+          <div className="grid md:grid-cols-2 gap-4 md:gap-6 items-stretch">
+            {leftCta}
+
+            {/* right column (darker), quiz on white with margin */}
+            <div className="bg-stone-100 rounded-2xl p-4 m-3 h-full">
+              <div className="bg-white rounded-2xl p-6 md:p-8 m-2">
+                <h3 className="text-lg font-semibold mb-4 text-center">{q.title}</h3>
+                <div className="grid grid-cols-2 gap-3">
+                  {q.options.map(opt => (
+                    <button
+                      key={opt}
+                      onClick={() => choose(opt)}
+                      className="rounded-xl border px-3 py-2 hover:shadow-sm active:scale-[.99] transition bg-gray-200"
+                    >
+                      {opt}
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      ) : (
-        <div className="grid md:grid-cols-2 gap-6">
-          {leftCta}
-          <div className="rounded-2xl border p-6 bg-white">
-            <h3 className="text-xl font-bold mb-2">Благодарим за ответы. Наш специалист свяжется с вами в ближайшее время</h3>
-{/*             <ul className="text-sm mb-4">
-              {Object.entries(answers).map(([k,v])=>(
-                <li key={k}><span className="font-medium">{k}:</span> {v}</li>
-              ))}
-            </ul> */}
-            <LeadForm text1="Получить расчет стоимости" text2="Получить скидку -10%!" />
+        ) : (
+          <div className="grid md:grid-cols-2 gap-4 md:gap-6 items-stretch">
+            {leftCta}
+            <div className="bg-stone-100 rounded-2xl p-4 m-3 h-full">
+              <div className="bg-white rounded-2xl p-6 md:p-8 m-2">
+                <h3 className="text-xl font-bold mb-2">
+                  Благодарим за ответы. Наш специалист свяжется с вами в ближайшее время
+                </h3>
+                <LeadForm text1="Получить расчет стоимости" text2="Получить скидку -10%!" />
+              </div>
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
 
+      {/* bottom CTA block unchanged */}
       <div className="mt-8">
         <div className="rounded-2xl border p-6 bg-gray-50">
           <div className="md:flex items-center justify-between gap-4">
             <div className="mb-4 md:mb-0">
               <h3 className="text-lg font-bold text-center">Не нашли подходящий вариант?</h3>
             </div>
-            {/* phone required, name optional per brief :contentReference[oaicite:7]{index=7} */}
             <button
               onClick={() => setOpen(true)}
               className="rounded-full px-5 py-2 text-sm font-semibold bg-orange-300 hover:bg-orange-400 text-black shadow hover:scale-[1.02] active:scale-100 transition-transform btn btn--primary"
@@ -89,7 +95,8 @@ export const CalculatorQuiz: React.FC = () => {
           </div>
         </div>
       </div>
-    <CTAFormModal text1="Оставьте заявку на индивидуальный расчет!" text2="Получить скидку -10%!" open={open} onClose={() => setOpen(false)} />
+
+      <CTAFormModal text1="Оставьте заявку на индивидуальный расчет!" text2="Получить скидку -10%!" open={open} onClose={() => setOpen(false)} />
     </section>
   )
 }
