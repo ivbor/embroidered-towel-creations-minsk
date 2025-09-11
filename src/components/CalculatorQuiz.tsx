@@ -29,7 +29,7 @@ export const CalculatorQuiz: React.FC = () => {
   ), [])
 
   function choose(opt: string) {
-    const next = { ...answers, [q.key]: opt }
+    const next = { ...answers, [q.title]: opt }
     setAnswers(next)
     if (step < questions.length - 1) setStep(step + 1)
     else setDone(true)
