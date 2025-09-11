@@ -15,7 +15,6 @@ export const CTAFormModal: React.FC<{ open: boolean; onClose: ()=>void }> = ({ o
       <div className="absolute inset-0 bg-black/40" onClick={onClose} />
       <div className="relative z-10 w-full max-w-md rounded-2xl bg-white p-6 shadow-lg">
         <button onClick={onClose} className="absolute top-2 right-3 text-xl">×</button>
-        <h3 className="text-lg font-semibold mb-2">Оставьте заявку</h3>
         <LeadForm text1={text1} text2={text2} />
       </div>
     </div>,
