@@ -24,7 +24,7 @@ import {
 
 export const Catalog: React.FC = () => {
   return (
-      <section id="catalog" className="py-16 bg-stone-50">
+      <section id="catalog" className="py-16 bg-stone-100 m-6">
         {/* Catalog Section */}
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
