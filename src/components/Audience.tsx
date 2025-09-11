@@ -18,7 +18,7 @@ export const Audience: React.FC = () => (
       <figure
         key={g}
         className={`rounded-3xl border p-6 text-center text-white bg-cover bg-center`}
-        style={{ backgroundImage: `url(/lovable-uploads/${images[i]}.jpg)` }}
+        style={{ backgroundImage: `url(/lovable-uploads/${images[i]})` }}
       >
       <figcaption className="font-medium bg-black/40 rounded-md inline-block px-2">
         {g}
