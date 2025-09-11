@@ -14,14 +14,10 @@ export const Footer: React.FC = () => {
             alt="Rusan Logo"
             className="h-8 w-auto object-contain logo"
             />
-            <div className="pt-1">
-              <div className="sr-only">RUSAN</div>
-              <p className="text-sm text-gray-700">Швейное ателье. Вышивка. Ремонт.</p>
-            </div>
           </div>
 
           {/* Middle: nav + contacts + CTA */}
-          <div className="grid gap-4 justify-items-center">
+          <div className="grid grid-cols-2 gap-4 justify-items-center">
             <nav className="text-base space-y-1 text-center">
               <a href="#calculator" className="block hover:opacity-80">Рассчитать стоимость</a>
               <a href="#catalog" className="block hover:opacity-80">Каталог</a>
@@ -35,14 +31,14 @@ export const Footer: React.FC = () => {
               <a href="tel:+375291870066" className="block font-medium">+375 29 187-00-66</a>
               <a href="mailto:itiel@tut.by" className="block underline underline-offset-4">itiel@tut.by</a>
               <div>г. Минск, ул. Гамарника, 22</div>
-            </div>
 
-            <button
-              onClick={() => setOpen(true)}
-              className="rounded-full px-6 py-2 text-base font-semibold bg-orange-300 hover:bg-orange-400 text-black shadow hover:scale-[1.02] active:scale-100 transition-transform"
-            >
-              Оставить заявку
-            </button>
+              <button
+                onClick={() => setOpen(true)}
+                className="rounded-full px-6 py-2 text-base font-semibold bg-orange-300 hover:bg-orange-400 text-black shadow hover:scale-[1.02] active:scale-100 transition-transform"
+              >
+                Оставить заявку
+              </button>
+            </div>
           </div>
 
           {/* Right: legal / company info */}
