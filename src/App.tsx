@@ -42,6 +42,7 @@ import { ClientsCarousel } from './components/ClientsCarousel'
 import { ReviewsFlip } from './components/ReviewsFlip'
 import { FAQ } from './components/FAQ'
 import { Footer } from './components/Footer'
+import InstagramGallery from '@/components/InstagramGallery';
 
 const queryClient = new QueryClient();
 
@@ -62,7 +63,8 @@ export default function App() {
             <section id="delivery-payment"><DeliveryPayment /></section>
             <section id="steps"><Steps /></section>
             <section id="clients"><ClientsCarousel /></section>
-            <section id="reviews"><ReviewsFlip /></section>
+            <section id="reviews"><InstagramGallery /></section>
+{/*             <section id="reviews"><ReviewsFlip /></section> */}
             <section id="faq"><FAQ /></section>
           </main>
           <Footer />
