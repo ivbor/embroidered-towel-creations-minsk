@@ -4,12 +4,13 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 
-export const LeadForm: React.FC = ({text1, text2}) => {
+export const LeadForm: React.FC = ({text1, text2, message=""}) => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    email: ''
+    email: '',
+    message: message
   });
 
   const handleFormSubmit = async () => {
@@ -17,7 +18,8 @@ export const LeadForm: React.FC = ({text1, text2}) => {
       const message = `Новая заявка:
         Имя: ${formData.name}
         Телефон: ${formData.phone}
-        Email: ${formData.email}`;
+        Email: ${formData.email}
+        Сообщение: ${formData.message}`;
 
       const response = await fetch("https://api.rusan.by/send-message", {
         method: "POST",
@@ -40,7 +42,8 @@ export const LeadForm: React.FC = ({text1, text2}) => {
       setFormData({
         name: '',
         phone: '',
-        email: ''
+        email: '',
+        message: message
       });
 
     } catch (error) {
