@@ -6,15 +6,13 @@ export const Footer: React.FC = () => {
   return (
     <>
       <footer className="border-t bg-gray-50">
-        <div className="mx-auto max-w-6xl px-4 py-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 items-start">
+        <div className="mx-auto max-w-6xl px-4 py-2 flex items-center justify-between">
           {/* Left: logo + tagline (image can be any src you use) */}
-          <div className="flex items-start gap-3">
-            <img
-            src="/lovable-uploads/d6fed386-6fc9-4b86-90f8-b64eee47a1a4.png"
-            alt="Rusan Logo"
-            className="h-8 w-auto object-contain logo"
-            />
-          </div>
+          <img
+          src="/lovable-uploads/d6fed386-6fc9-4b86-90f8-b64eee47a1a4.png"
+          alt="Rusan Logo"
+          className="h-8 w-auto object-contain logo"
+          />
 
           {/* Middle: nav + contacts + CTA */}
           <div className="grid grid-cols-2 gap-4 justify-items-center">
