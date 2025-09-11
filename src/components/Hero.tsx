@@ -17,7 +17,7 @@ export const Hero: React.FC = () => {
           </ul>
         </div>
         <div className="rounded-3xl bg-stone-100 p-6 hover:shadow-md transition-shadow">
-          <LeadForm/>
+          <LeadForm text1="Оставьте заявку на индивидуальный расчет!" text2="Получить скидку -10%!"/>
         </div>
       </div>
     </div>
